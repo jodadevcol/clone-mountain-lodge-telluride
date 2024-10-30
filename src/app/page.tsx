@@ -1,101 +1,179 @@
-import Image from "next/image";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
+import Image from 'next/image'
+
+const SECTION2_DATA = [
+  {
+    id: '0001',
+    title: 'Tracks & Trails',
+    description:
+      'Explore your passion from serene hiking trails to powdery slopes. Our scenic lodge offers ski-in/ski-out access to Telluride Ski Resort and is far from fabricated. This is raw, real, unadulterated Colorado!',
+    calltoaction: {
+      text: '',
+      url: ''
+    },
+    image: {
+      src: 'mlt-homepage-summer-carousel-001.jpg',
+      alt: 'Summer carousel'
+    }
+  },
+  {
+    id: '0002',
+    title: 'Far Above Expectations',
+    description:
+      'Tucked in a box canyon flanked by towering peaks, Telluride holds a grip on the imagination. Discover a retreat where you’ll create lasting memories and strike new friendships far from the crowds.',
+    calltoaction: {
+      text: '',
+      url: ''
+    },
+    image: {
+      src: 'mlt-homepage-summer-carousel-002.jpg',
+      alt: 'Summer carousel'
+    }
+  },
+  {
+    id: '0003',
+    title: 'A Town for all Seasons',
+    description:
+      'Celebrate the waning days of summer at an outdoor event, and then plug into the palpable excitement of the countdown to Opening Day at Telluride Ski Resort. There’s always something to do, no matter the season.',
+    calltoaction: {
+      text: '',
+      url: ''
+    },
+    image: {
+      src: 'mlt-homepage-summer-carousel-003.jpg',
+      alt: 'Summer carousel'
+    }
+  },
+  {
+    id: '0004',
+    title: 'The View Restaurant',
+    description:
+      'After a day of adventure, kick back and relax at our signature restaurant, where sweeping views pair perfectly with a simple, seasonal menu and a rotating selection of Colorado brews on tap.',
+    calltoaction: {
+      text: '',
+      url: ''
+    },
+    image: {
+      src: 'mlt-homepage-summer-carousel-004.jpg',
+      alt: 'Summer carousel'
+    }
+  }
+]
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      {/* Head Intro */}
+      <section className='relative bg-primary'>
+        <article className='min-h-screen  max-h-screen overflow-hidden'></article>
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* HomePage / Intro content */}
+      <section className='relative pt-20'>
+        <div className='container-content'>
+          <article className='flex flex-col gap-y-11 text-center text-gray-700'>
+            <div className='content-titles space-y-5'>
+              <h1 className='font-raleway uppercase text-lg tracking-widest'>Mountain Lodge Telluride</h1>
+
+              <h2 className='font-playfair text-5xl-1 uppercase text-primary tracking-widest'>Simply Sensational</h2>
+            </div>
+
+            <div className='content-description'>
+              <p className='max-w-prose xl:max-w-full mx-auto text-lg tracking-wider'>
+                Set above the Victorian mining town of Telluride, amid the spectacular peaks and magnificent canyons of the San Juan range, Mountain Lodge Telluride is a retreat built for adventure
+                seekers. Experience a mountainside refuge that’s just a scenic gondola ride from the vibrant town center. Boasting the convenience of fully furnished units along with modern resort
+                amenities, this is where the allure of the mountains finds its way home.
+              </p>
+            </div>
+          </article>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </section>
+
+      {/* HomePage / Section 1 */}
+      <section className='relative py-20'>
+        <div className='container-content'>
+          <article className='flex items-start justify-between mt-20 min-h-[580px]'>
+            <div className='flex-1'>
+              <h2 className='font-playfair text-5xl-1 uppercase text-primary tracking-widest'>
+                <span className='block font-raleway tracking-wider text-lg text-gray-700'>Book</span> Direct
+              </h2>
+
+              <div className='mt-14'>
+                <div className='relative flex items-center justify-center rounded-full size-36 bg-primary-foreground text-primary-foreground after:content-[""] after:absolute after:size-[calc(100%+280px)] after:bg-transparent after:border after:border-t-0 after:border-l-0 after:border-r-0 after:border-dashed after:border-current after:rounded-full after:-rotate-12'>
+                  <span className='max-w-11 w-full text-white'>
+                    <svg className='size-full ' xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='100.04 0 62.71 96.24'>
+                      <path d='M132.75 0c-.33 2.71-.67 5.42-1.04 8.43.39-.47.59-.74.82-.98 1.21-1.3 2.41-2.6 3.66-3.87.25-.25.69-.33 1.04-.49.09.1.18.21.27.31-1.69 2.35-3.38 4.7-5.06 7.04 2.79-1.26 3.93-4.43 6.82-5.54.11.07.22.14.33.22-.14.35-.19.77-.42 1.05-1.21 1.44-2.42 2.88-3.72 4.24-.97 1.02-2.11 1.9-3.11 2.9-.22.22-.2.67-.33 1.14 1.5-1.1 2.74-2.2 4.16-3 1.38-.78 2.31-2.32 4.28-2.46-.26 1.26-1.13 2-1.92 2.65-1.95 1.59-4.02 3.03-6.03 4.56-.18.14-.36.41-.35.62.02.67.13 1.34.21 2.03 1.54-1.15 2.98-2.29 4.49-3.34 1.5-1.04 2.92-2.26 4.82-2.57.09.1.18.19.28.29-.85.92-1.62 1.93-2.56 2.74-1.46 1.25-3.02 2.39-4.57 3.53-.49.36-1.09.64-1.68.81-.51.15-.73.33-.69.87.05.7 0 1.4.13 2.12 2.05-2.85 5.43-3.56 8.21-5.17.31-.18.64-.35.99-.47.19-.07.51-.12.62-.02.12.11.18.47.08.6-.43.6-.8 1.35-1.41 1.69-2.61 1.48-5.29 2.82-7.93 4.24-.23.12-.54.4-.54.59.03.93.15 1.86.24 2.75 3.2-2.61 6.83-4.06 10.64-5.23-.57 1-1.43 1.68-2.41 2.2-2.63 1.37-5.28 2.7-7.91 4.07-.21.11-.39.44-.42.68-.06.61-.02 1.22-.02 1.85 2.4-1.25 4.65-2.49 6.98-3.6 1.01-.48 2.14-.7 3.24-.98.23-.06.54.14.81.23-.14.27-.23.58-.42.81-.13.17-.36.29-.58.38-3.12 1.34-6.25 2.66-9.37 4.01-.24.1-.57.35-.58.54-.06.96-.03 1.92-.03 2.73 3.97-2.21 7.9-4.39 12.21-5.82.1.11.2.21.31.32-.28.38-.48.85-.85 1.12-1.07.78-2.14 1.63-3.34 2.16-2.38 1.05-4.83 1.95-7.28 2.81-.84.29-1.2.65-1.11 1.52.07.73.02 1.47.02 2.04 3.96-2.3 7.94-4.44 12.27-5.9l.3.33c-.31.4-.54.91-.94 1.18-1.23.85-2.45 1.76-3.81 2.36-2.22.99-4.54 1.78-6.84 2.58-.7.24-1.13.52-.99 1.29v.1c-.19 1.98.12 3.82 1.13 5.62.84 1.5 1.28 3.21 1.91 4.83.1.26.22.53.37.91.58-.47 1.09-.88 1.57-1.27-1.04-3.05-3.09-5.74-2.88-9.04.16-.07.33-.15.49-.22.3.48.68.93.88 1.45.87 2.22 1.69 4.46 2.52 6.69 1.38-.5 1.65-.93 1.01-2.16-1.14-2.18-1.46-4.52-1.66-6.9-.02-.29-.05-.6.04-.88.08-.25.3-.46.47-.69.25.18.65.32.71.55.34 1.29.57 2.6.89 3.9.33 1.32.73 2.62 1.17 4.16.76-.63 1.33-1.06 1.83-1.55.14-.14.2-.49.13-.69-.87-2.64-1.01-5.37-1.17-8.1-.02-.28.28-.57.43-.86.25.2.66.37.72.62.26 1.14.43 2.31.63 3.46.24 1.37.49 2.75.76 4.28.6-.5 1.24-1.03 1.86-1.57.06-.05.1-.18.09-.27-.19-1.48-.46-2.94-.58-4.42-.12-1.39-.11-2.8-.13-4.19 0-.23.14-.46.22-.68.1-.01.2-.02.3-.04.13.4.33.79.39 1.2.36 2.35.7 4.7 1.04 7.07 1.56-.64 1.92-1.26 1.72-2.82-.3-2.36-.04-4.69.59-6.98.09-.31.33-.58.5-.86l.28.06v6.84c.06.01.12.01.18.02 1.45-2.3 2.91-4.6 4.36-6.89.11.05.22.1.34.14.04 1.02-.57 1.87-1.06 2.73-.52.9-1.15 1.75-1.65 2.72 2.12-1.21 3.83-3.15 6.4-3.51.05.07.1.15.15.22l-6.85 4.99.06.33h6.25l.06.45c-.63.18-1.25.44-1.89.51-1.37.14-2.75.31-4.11.22-1.92-.13-3.1.91-4.29 2.16 3.05-.34 6.02.01 8.99.44 0 .11.03.22.04.33-.35.08-.69.23-1.04.24-2.45.07-4.9.12-7.35.15-2.29.03-2.29.01-3.94 1.87 2.96.12 5.81.39 8.52 1.61-.33.08-.67.24-1 .22-2.58-.11-5.16-.24-7.74-.39-.42-.02-.95-.38-1.21-.22-.72.43-1.33 1.04-2.15 1.72 3.43-.43 6.29.62 9.19 1.47v.52c-.61.1-1.25.37-1.82.27-2.24-.38-4.52-.72-6.68-1.38-1.44-.44-2.09.2-2.84 1.01 1.56.4 3.12.73 4.62 1.22 1.43.47 3.11.48 4.16 1.76-.11.03-.21.06-.32.1-.08.49-.26.98-.23 1.47.08 1.37.23 2.73.38 4.09.15 1.32.35 2.64.52 3.96 1.58-.62 2.09-1.37 1.95-2.94-.22-2.63.08-5.21.9-7.72.13-.39.41-.73.62-1.09l.44.12c-.17 2.54-.35 5.07-.52 7.61l.28.03c1.7-2.48 3.4-4.97 5.11-7.45l.39.18c-.13.47-.17.99-.41 1.4-.82 1.39-1.71 2.73-2.57 4.09-.21.33-.42.65-.56 1.1 2.49-1.67 4.99-3.26 8.12-3.55-3.12 1.96-6.58 3.42-9.24 6.34 2.73-.3 5.27-1.33 7.89-.63.02.1.05.2.07.31-.31.13-.61.31-.93.38-2.26.49-4.52.98-6.78 1.43-.52.1-1.14.26-1.58.09-1.22-.48-1.86.18-2.7 1.17 3.55-.36 6.83.11 10.1.69 0 .11.03.23.04.34-.34.12-.69.34-1.03.34-3.02-.03-6.07.11-9.06-.24-1.68-.19-2.18.86-3.12 1.6 3.23.16 6.32.77 9.3 1.85v.3c-.34.07-.68.23-1.01.21-2.88-.22-5.75-.46-8.62-.72-.48-.04-1.08-.45-1.39-.29-.83.45-1.53 1.13-2.49 1.88 3.84-.5 6.96.9 10.41 1.91-.77.8-1.42 1.04-2.18.86-2.8-.67-5.58-1.38-8.38-2.05-.28-.07-.66-.02-.9.13-.5.31-.93.72-1.37 1.07 1.74.51 3.45.91 5.07 1.53 1.58.6 3.51.62 4.68 2.35-1.12.48-2.06.17-2.94-.11-2.23-.7-4.45-1.46-6.65-2.24-1.65-.58-2.08-.48-3.26 1.03 3.53.76 6.78 2.07 9.85 4.09-.82.74-1.55.5-2.2.23-2.74-1.14-5.46-2.34-8.2-3.48-.24-.1-.66-.06-.88.09-.82.57-1.65 1.14-2.35 1.83-.32.32-.47.91-.47 1.39-.06 5.22-.08 10.45-.12 15.67 0 1.34-1.2 2.14-2.73 1.7.23-.63.51-1.24.67-1.89.23-.94.51-1.89.54-2.85.12-5.03.14-10.05.24-15.08 0-.76-.18-1.29-.82-1.74-.92-.65-1.71-1.77-2.7-1.95-.93-.17-2.05.59-3.06 1.01-1.64.68-3.25 1.4-4.87 2.12-1.09.49-1.51.5-2.37-.12 2.75-1.96 5.81-3.07 8.97-3.96-.74-1.4-1.72-1.75-3.1-1.29-2.73.89-5.48 1.73-8.23 2.56-.37.11-.8.02-1.2.02-.06-.13-.11-.26-.17-.39.4-.33.75-.8 1.21-.96 2.73-.95 5.49-1.83 8.19-2.72-.84-1.2-1.44-1.39-2.99-1-2.47.62-4.94 1.23-7.43 1.74-.6.12-1.3-.19-2.09-.32 1.08-1.32 5.48-2.37 10.04-2.52-.82-.66-1.52-1.24-2.25-1.79-.1-.08-.32-.09-.46-.05-3.16.83-6.39 1.02-9.64 1.05-.3 0-.6-.11-.91-.32a27.86 27.86 0 0 1 9.37-2.03c-.58-.51-1.15-1.03-1.75-1.52-.1-.08-.31-.09-.46-.06-.84.12-1.66.36-2.5.39-2.25.08-4.5.09-6.75.1-.48 0-.96-.1-1.45-.36 3.22-.88 6.48-1.28 9.89-1.2-.69-.55-1.37-1.11-2.06-1.65-.11-.09-.32-.13-.46-.11-3.1.51-6.12-.17-9.15-.65-.3-.05-.57-.23-1.07-.43 1.14-.69 2.14-.48 3.11-.4 1.53.12 3.05.28 4.61.27-2.61-1.5-5.56-1.96-8.42-2.75 2.17-.65 4.27-.13 6.43.12l-6.45-4.29c.05-.09.1-.18.16-.27 2.86.3 4.83 2.34 7.21 3.68-1.13-1.95-2.84-3.57-3.27-5.82.14-.08.27-.16.41-.24 1.68 2.46 3.36 4.92 5.1 7.46.75-2.59-.7-5.12.13-7.78.24.44.57.85.71 1.32.8 2.62 1.17 5.29.71 8.02-.22 1.28.94 1.48 1.63 2.17.38-3.21.74-6.31 1.11-9.41.15-.01.29-.02.44-.04.14.29.39.57.4.86.02 1.69.04 3.38-.05 5.07-.06 1.1-.31 2.19-.46 3.29-.18 1.26.48 2.13 2.06 2.79.32-2.4.76-4.79.93-7.21.1-1.42.92-2.21 2-2.68 2.19-.95 4.48-1.7 6.73-2.52.27-.1.56-.16.85-.25-1.03-1.38-1.22-1.41-2.73-.93-2.01.63-4.03 1.23-6.06 1.78-.59.16-1.24.11-1.86.16-.06-.1-.12-.21-.19-.31.33-.28.61-.7.99-.83 2.39-.75 4.79-1.44 7.16-2.14-.59-1.01-1.06-1.17-2.28-.9-2.19.48-4.39.95-6.6 1.33-.52.09-1.1-.2-1.65-.55 2.74-1.04 5.45-2 8.64-1.64-.67-.57-1.2-1.07-1.78-1.49-.17-.12-.49-.09-.73-.07-2.77.16-5.54.33-8.32.49-.17.01-.34-.13-.77-.31 2.8-.92 5.44-1.31 8.31-1.33-.97-1.06-1.76-1.93-3.31-1.86-2.35.11-4.7.01-7.05-.02-.4-.01-.8-.12-1.19-.38 2.75-.67 5.52-.87 8.59-.53-1.1-1.18-2.09-2.03-3.57-2.11-1.6-.09-3.21-.16-4.81-.29-.5-.04-.99-.25-1.49-.39l.03-.37h5.93l.09-.35-6.45-4.71c1.32-.18 2.3.54 3.27 1.13.98.59 1.84 1.37 2.85 1.99-.88-1.72-2.29-3.17-2.6-5.11.11-.06.22-.13.34-.19 1.37 2.16 2.75 4.31 4.28 6.71v-6.65c.09-.03.17-.05.26-.08.17.28.4.54.48.83.61 2.06.93 4.19.53 6.29-.28 1.5.32 2.25 1.6 2.97.42-2.64.84-5.24 1.25-7.84.13 0 .26-.01.4-.01.09.3.27.61.26.9-.06 1.59-.15 3.19-.28 4.78-.08 1.03-.26 2.05-.38 3.08 0 .13.07.32.17.42.53.48 1.08.93 1.63 1.39.39-2.3.77-4.51 1.14-6.71.03-.19.04-.41.14-.57.16-.25.4-.45.6-.68.15.29.47.6.44.87-.24 2.29-.43 4.61-.88 6.86-.2.99-.09 1.59.74 2.11.25.16.47.35.78.59.89-1.48 1.2-3.05 1.44-4.65.14-.93.4-1.84.68-2.74.07-.22.41-.36.62-.53.16.22.48.45.46.65-.18 1.77-.38 3.55-.68 5.3-.11.63-.49 1.21-.75 1.81-.62 1.43-.62 1.44.91 2.35.12-.34.24-.65.36-.97.7-1.94 1.38-3.88 2.09-5.81.09-.24.26-.46.45-.64.12-.12.37-.24.5-.2.14.05.3.29.29.45-.02.58.03 1.21-.17 1.73-.75 1.95-1.61 3.87-2.39 5.81-.09.23-.05.63.1.81.31.36.74.62 1.12.93.77-1.91 1.47-3.74 2.25-5.53.31-.7.86-1.3 1.22-1.99.19-.35.27-.79.28-1.2q.1-3.05-2.85-3.95c-2.39-.73-4.61-1.8-6.54-3.38-.45-.37-.77-.88-1.15-1.32.08-.1.16-.21.24-.31.4.07.83.07 1.19.23 1.64.75 3.27 1.51 4.87 2.33 1.27.65 2.5 1.4 3.75 2.1.1.06.25.05.54.11 0-.81.04-1.54-.03-2.27-.02-.18-.37-.45-.59-.46-1.39-.08-2.57-.6-3.74-1.3-1.77-1.06-3.61-2.02-5.41-3.03-.39-.22-.77-.48-1.2-.75.81-.83 1.52-.38 2.18-.07 2.29 1.09 4.55 2.24 6.84 3.34.56.27 1.17.44 1.98.73 0-.86.05-1.53-.03-2.18-.02-.19-.37-.41-.62-.51-2.57-1.02-5.18-1.98-7.73-3.06-.8-.34-1.48-.98-2.17-1.55-.17-.14-.15-.51-.22-.78.25-.06.52-.21.74-.15.61.15 1.23.34 1.8.6 2.71 1.2 5.4 2.43 8.25 3.72 0-.7.07-1.4-.04-2.07-.04-.24-.48-.47-.78-.61-2.24-1.03-4.52-1.98-6.73-3.08-.94-.47-1.74-1.21-2.56-1.88-.19-.15-.21-.5-.31-.76.31-.07.61-.14.92-.19.09-.01.19.06.28.1 2.51 1.09 5.02 2.16 7.51 3.27.54.24 1.03.59 1.72.99 0-.82.04-1.55-.03-2.27-.02-.21-.32-.47-.56-.58-2.87-1.37-5.61-2.93-8.07-4.92-.27-.22-.34-.66-.5-1.01.41-.04.91-.24 1.21-.09 2.63 1.35 5.23 2.76 7.82 4.14.55-1.22 0-2.69-1.4-3.4-2.31-1.18-4.6-2.41-6.88-3.66-.41-.22-.71-.62-.95-1.12 3.28.59 6.08 2.26 8.95 3.8.32-1.64.09-2.12-1.37-2.57-2.61-.81-4.62-2.33-6-4.64-.12-.2-.24-.39-.33-.6-.04-.08 0-.18 0-.58 1.22.93 2.25 1.79 3.36 2.52 1.13.74 2.35 1.35 3.53 2.02.09-.07.19-.14.28-.21-.18-.36-.32-.75-.54-1.08-1.66-2.37-3.34-4.73-5-7.1-.11-.15-.15-.35-.22-.52.06-.08.12-.17.19-.25.46.28 1.02.47 1.36.84.97 1.08 1.86 2.23 2.78 3.35.27.32.52.65.79.98.1-.01.2-.03.3-.04.03-.62.09-1.24.09-1.86.02-1.98.55-3.79 1.76-5.39.12-.07.33-.07.53-.07Zm-1.81 73.22c.06-.54.13-.99.14-1.43.04-1.7.05-3.39.07-5.09.04-3.55.07-7.11.14-10.66.05-2.88.07-2.88-2.18-4.77-.25-.21-.52-.41-.76-.65-.42-.42-.8-.45-1.41-.21-2.69 1.06-5.42 2.03-7.92 2.95-.44 3.26-.87 6.48-1.29 9.69-.02.19.03.48.17.6.61.54 1.27 1.04 2.11 1.71.4-1.42.81-2.61 1.08-3.83.36-1.65.58-3.33.92-4.98.05-.26.46-.45.71-.68.21.26.49.49.62.79.11.25.08.58.07.87-.11 2.61-.39 5.18-1.54 7.61-.67 1.4-.48 1.67 1.1 2.37.8-2.41 1.59-4.82 2.39-7.23.12-.37.25-.75.48-1.06.17-.23.49-.36.75-.54.15.3.44.61.43.9-.03.7-.1 1.43-.32 2.1-.79 2.31-1.65 4.59-2.52 6.98.51.39 1.07.82 1.77 1.36.17-.58.27-.98.41-1.37.82-2.2 1.63-4.41 2.48-6.6.1-.26.44-.43.68-.64.14.3.44.62.41.89-.15 1.09-.27 2.21-.64 3.23-.57 1.6-1.35 3.12-2.02 4.69-.09.22-.2.63-.11.7 1.13.88 1.99 2.18 3.78 2.3Zm7.65-1.49c1.59-.64 1.78-1.02 1.2-2.48-.3-.76-.76-1.5-.87-2.29-.3-2.12-.48-4.26-.63-6.39-.02-.24.38-.51.59-.77.24.22.61.41.7.68.27.8.51 1.63.6 2.46.23 2.19.51 4.36 1.6 6.45.64-.51 1.26-.96 1.81-1.47.18-.16.3-.51.26-.74-.18-1.06-.54-2.09-.64-3.16-.18-2.07-.25-4.16-.32-6.24 0-.23.34-.47.52-.7.22.17.49.3.63.51s.17.49.2.75c.36 2.72.71 5.44 1.07 8.2.63-.51 1.35-1.08 2.06-1.67.1-.09.17-.28.16-.42-.1-1.16-.24-2.31-.33-3.47-.11-1.62-.21-3.25-.26-4.88-.02-.63.11-1.27.17-1.82-2.44-.76-4.77-1.47-7.09-2.2-1.51-.48-1.85-.38-2.67.77 2.48.97 5.02 1.95 7.54 2.98.4.17.7.58 1.05.88-.53.05-1.06.11-1.6.15-.09.01-.19-.07-.28-.1-2.46-.95-4.91-1.92-7.39-2.84-.26-.1-.72.03-.96.21-.87.66-1.74 1.34-2.51 2.12-.35.35-.63.93-.65 1.41-.07 2.45-.06 4.89-.05 7.34 0 .41.11.84.25 1.23.83 2.34 1.69 4.66 2.53 7 .11.3.2.6.34 1.02.6-.46 1.13-.81 1.57-1.23.15-.14.18-.53.1-.74-.5-1.28-1.13-2.51-1.55-3.81-.53-1.63-.93-3.31-1.31-4.98-.06-.26.26-.6.4-.9.28.19.69.32.82.57.36.76.62 1.57.89 2.37.7 2.07 1.37 4.13 2.05 6.2Zm-7.25-26.9c-.06-.01-.12-.03-.17-.04-.79 1.6-1.59 3.2-2.36 4.81-.07.14-.04.42.07.51.51.47 1.03.94 1.61 1.32.37.25.84.22.84-.38.02-2.08 0-4.15 0-6.22Zm1.36 10.49c.74-.51 1.26-.88 1.79-1.22.6-.39.7-.81.31-1.46-.5-.84-.86-1.75-1.29-2.63-.19-.38-.4-.75-.6-1.12-.07.03-.14.06-.21.08v6.35Zm.03 15.64c-.06 0-.12.03-.18.04v5.23c.67-.35 1.19-.57 1.64-.87.17-.11.33-.47.27-.62-.55-1.27-1.15-2.52-1.73-3.78Z'></path>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className='flex-1'></div>
+
+            <div className='flex-1'>
+              <ul className='flex flex-col gap-y-1'>
+                <li className='inline-flex items-start justify-start gap-x-3 text-lg tracking-wider'>
+                  <span className='size-1.5 mt-2.5 rounded-full bg-current '></span> Best Rate Guarantee
+                </li>
+                <li className='inline-flex items-start justify-start gap-x-3 text-lg tracking-wider'>
+                  <span className='size-1.5 mt-2.5 rounded-full bg-current '></span> Flexible Cancellations
+                </li>
+                <li className='inline-flex items-start justify-start gap-x-3 text-lg tracking-wider'>
+                  <span className='size-1.5 mt-2.5 rounded-full bg-current '></span> Exclusive Room Types & Availability
+                </li>
+                <li className='inline-flex items-start justify-start gap-x-3 text-lg tracking-wider'>
+                  <span className='size-1.5 mt-2.5 rounded-full bg-current '></span> No Unpleasant Surprises
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div className='absolute inset-0 min-h-[880px] bg-bottom bg-no-repeat bg-cover -z-10' style={{ display: 'flex', backgroundImage: 'url("./summer/mlt-homepage-summer-bg.jpeg")' }}>
+          <div className='relative size-full'>
+            <div className='absolute h-full w-1/4 left-[395px] top-0 bottom-0 -translate-x-full bg-gradient-to-l from-transparent to-white'></div>
+            <div className='absolute h-full w-1/4 right-[395px] top-0 bottom-0 translate-x-full bg-gradient-to-l from-white to-transparent'></div>
+          </div>
+        </div>
+      </section>
+
+      {/* HomePage / Section 2 */}
+      <section className='relative py-20'>
+        <div className='container-full'>
+          <Carousel opts={{ loop: true }}>
+            <CarouselContent>
+              {SECTION2_DATA.map(({ id, title, description, image }) => {
+                return (
+                  <CarouselItem key={id}>
+                    <article className='flex items-center justify-start gap-x-10'>
+                      <picture className='flex-1 max-w-[770px]'>
+                        <Image src={`/summer/${image.src}`} alt={image.alt} width={768} height={650} />
+                      </picture>
+
+                      <div className='flex-1 max-w-[580px]'>
+                        <div className='max-w-[460px] mx-auto space-y-10'>
+                          <h2 className='font-playfair text-5xl-1 uppercase text-primary tracking-widest'>{title}</h2>
+                          <div className='text-lg tracking-wider'>
+                            <p>{description}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </CarouselItem>
+                )
+              })}
+            </CarouselContent>
+
+            <div className='absolute top-1/2 left-[45.5%] size-[100px]'>
+              <div className='relative bg-white size-full'>
+                <CarouselPrevious></CarouselPrevious>
+                <CarouselNext></CarouselNext>
+              </div>
+            </div>
+          </Carousel>
+        </div>
+      </section>
+    </>
+  )
 }
